@@ -6,7 +6,7 @@ window.onload = function(){
         //Canvas / WebGL
         width: 800,
         height: 600,
-        scene: [Preloader, Scene1], //pode passar várias cenas e carregá-las dinamicamente durante o jogo
+        scene: [Preloader, StartScene, Scene1], //pode passar várias cenas e carregá-las dinamicamente durante o jogo
         physics: { //configuração de físicas
             default: 'arcade', //nome do motor
             arcade: {
