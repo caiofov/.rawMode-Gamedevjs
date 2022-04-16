@@ -3,11 +3,11 @@ class Preloader extends Phaser.Scene{
         super('Preloader')
     }
     preload(){
-        this.load.image('background', 'img/sky.png')
+        this.load.image('background', '../../assets/img/sky.png')
         // this.load.image('help_button', 'img/coin.png')
-        this.load.image('help_menu', 'img/helpmenu.png')
+        this.load.image('help_menu', '../../assets/img/helpmenu.png')
 
-        this.load.spritesheet('coin', 'img/coin.png', {frameWidth:36, frameHeight:40})
+        this.load.spritesheet('coin', '../../assets/img/coin.png', {frameWidth:36, frameHeight:40})
     }
     create(){
         this.anims.create({
