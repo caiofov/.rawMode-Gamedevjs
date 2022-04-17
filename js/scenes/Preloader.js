@@ -9,9 +9,22 @@ class Preloader extends Phaser.Scene{
 
         this.load.spritesheet('coin', '../../assets/img/coin.png', {frameWidth:36, frameHeight:40})
         this.load.spritesheet('binary', '../../assets/img/binary.png', {frameWidth:800, frameHeight:450})
-
+        // https://www.videvo.net/video/binary-numbers-01-alpha-matte/1343/
+        this.load.spritesheet('player', '../assets/img/player.png', {frameWidth:32, frameHeight:32})
+    
     }
     create(){
+        //player
+        this.anims.create({
+            key:'walk',
+            frames: this.anims.generateFrameNumbers('player', {
+                start: 0,
+                end: 5
+            }),
+            frameRate: 8,
+            repeat: -1 
+        })
+        //help button
         this.anims.create({
             key:'spin',
             frames: this.anims.generateFrameNumbers('coin', {
@@ -21,6 +34,7 @@ class Preloader extends Phaser.Scene{
             frameRate: 20,
             repeat: -1,
         })
+        //start background
         this.anims.create({
             key:'binary_background',
             frames: this.anims.generateFrameNumbers('binary',{

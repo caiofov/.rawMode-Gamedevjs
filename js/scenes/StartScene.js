@@ -10,14 +10,12 @@ class StartScene extends Phaser.Scene{
         this.startText = this.add.text(game.config.width/2, game.config.height/2, 'START', {fontSize: '32px'})
         .setOrigin(.5)
         .setInteractive()
-        
-        this.startText.visible = false
-
+        .setVisible(false)
         
     }
     update(){
         if(!this.background.anims.isPlaying){
-            this.startText.visible = true
+            this.startText.setVisible(true)
         }
         this.startText.on(Phaser.Input.Events.GAMEOBJECT_POINTER_OVER, () =>{
             if(!this.isMenuOpen){
