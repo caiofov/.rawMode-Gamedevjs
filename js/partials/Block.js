@@ -14,14 +14,13 @@ class Block{
         })
     }
 
-    createBits(x,y){
+    createBits(x,y){ //loads the initial bits
         switch (this.type){
-            case 'water':
+            case 'metal':
                 return [new Bit(this.scene, this, x+30,y+30, '1')]
-                break
-            case 'grass':
+
+            case 'spike':
                 return [new Bit(this.scene, this, x+30,y+30, '0')]
-                break
         }
     }
 
@@ -35,15 +34,13 @@ class Block{
 
         switch(bitSequence){
             case '1':
-                this.type = 'water'
+                this.type = 'metal'
                 break
                 
             case '0':
-                this.type = 'grass'
+                this.type = 'spike'
                 break
         }
         this.img.setTexture(this.type)
-        console.log(bitSequence,this.type)
-
     }
 }

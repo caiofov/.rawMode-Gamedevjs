@@ -3,29 +3,31 @@ class Preloader extends Phaser.Scene{
         super('Preloader')
     }
     preload(){
+        //scene1 background
         this.load.image('background', '../../assets/img/sky.png')
-        // this.load.image('help_button', 'img/coin.png')
+        //help menu
         this.load.image('help_menu', '../../assets/img/helpmenu.png')
-        this.load.image('bit1', '../../assets/img/1.png')
-        this.load.image('bit0', '../../assets/img/0.png')
-        this.load.image('water', '../../assets/img/water.png')
-        this.load.image('dirt', '../../assets/img/dirt.png')
-        this.load.image('grass', '../../assets/img/grass.png')
+        //metal block
+        this.load.image('metal', '../../assets/img/metal.png')
+        //spike block
+        this.load.image('spike', '../../assets/img/spike.png')
 
-
+        //help button
         this.load.spritesheet('coin', '../../assets/img/coin.png', {frameWidth:36, frameHeight:40})
+        //start background
         this.load.spritesheet('binary', '../../assets/img/binary.png', {frameWidth:800, frameHeight:450})
-        // https://www.videvo.net/video/binary-numbers-01-alpha-matte/1343/
+        // https://www.videvo.net/video/binary-numbers-01-alpha-matte/1343/ -> video
+        //player spritesheet
         this.load.spritesheet('player', '../assets/img/player.png', {frameWidth:32, frameHeight:32})
     
     }
     create(){
-        //player
+        //player walking animation
         this.anims.create({
             key:'walk',
             frames: this.anims.generateFrameNumbers('player', {
                 start: 0,
-                end: 5
+                end: 0
             }),
             frameRate: 8,
             repeat: -1 
@@ -40,7 +42,8 @@ class Preloader extends Phaser.Scene{
             frameRate: 20,
             repeat: -1,
         })
-        //start background
+
+        //start scene background
         this.anims.create({
             key:'binary_background',
             frames: this.anims.generateFrameNumbers('binary',{

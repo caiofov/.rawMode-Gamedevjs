@@ -20,7 +20,7 @@ class Scene1 extends Phaser.Scene{
         this.player = new Player(this, this.control, 50, 50)
         this.player.collision()
 
-        this.blocks = [new Block(this, 100, 100, 'grass'), new Block(this,200, 100, 'water')]
+        this.blocks = [new Block(this, 100, 100, 'metal'), new Block(this,200, 100, 'spike')]
        
     }
 
