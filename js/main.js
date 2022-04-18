@@ -1,20 +1,18 @@
 var game
 window.onload = function(){
     const config = {
-        type: Phaser.Canvas, //tipo de tecnologia para renderizar a imagem na tela do navegador
-        //AUTO -> proprio sistema escolhe a tecnologia
-        //Canvas / WebGL
+        type: Phaser.Canvas, 
         width: 800,
         height: 600,
-        scene: [Preloader, StartScene, Scene1], //pode passar várias cenas e carregá-las dinamicamente durante o jogo
-        physics: { //configuração de físicas
-            default: 'arcade', //nome do motor
+        scene: [Preloader, StartScene, Scene1], 
+        physics: {
+            default: 'arcade', 
             arcade: {
                 gravity: {y: 1000},
                 // debug: true
             }
         },
-        pixelArt: true //diz que está utilizando pixel arte para não dar o blur nas imagens aumentadas 
+        pixelArt: true 
     }
     game = new Phaser.Game(config)
 }

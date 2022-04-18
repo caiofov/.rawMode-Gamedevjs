@@ -1,8 +1,8 @@
 class Bit{
     constructor(scene,block, x,y, bit){
         this.scene = scene
-        this.block = block
-        this.bit = bit
+        this.block = block //class Block
+        this.bitValue = bit //'1' or '0' -> string
         this.bitText = this.scene.add.text(x,y, bit, {fontSize: '32px'})
         .setOrigin(.5)
         .setInteractive()
@@ -10,8 +10,9 @@ class Bit{
     }
 
     update(){
-        this.bitText.visible = this.scene.rawModeEnabled
-        if(this.scene.rawModeEnabled)
+        this.bitText.visible = this.scene.rawModeEnabled //changes the text visbility
+
+        if(this.scene.rawModeEnabled) //if the game is in raw mode, the player can interact with the bits
         {
             this.bitText.on(Phaser.Input.Events.GAMEOBJECT_POINTER_DOWN, () =>{
                 if(!this.cursorIsDown){
@@ -37,14 +38,14 @@ class Bit{
     }
 
     updateText(){
-        this.bitText.setText(this.bit)
+        this.bitText.setText(this.bitValue)
     }
 
     switchBits(){
         //switch bits
-        let selectedText = this.scene.selectedBit.bit
-        this.scene.selectedBit.bit = this.bit
-        this.bit = selectedText
+        let selectedText = this.scene.selectedBit.bitValue
+        this.scene.selectedBit.bitValue = this.bitValue
+        this.bitValue = selectedText
 
         //change displayed text
         this.updateText()

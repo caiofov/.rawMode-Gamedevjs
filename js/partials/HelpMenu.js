@@ -18,7 +18,7 @@ class HelpMenu{
         this.menuSpeed = 6
     }
 
-    mouseEventListener(){
+    update(){
         this.help_button.on(Phaser.Input.Events.GAMEOBJECT_POINTER_OVER, () =>{
             if(!this.isMenuOpen){
                 this.help_button.setScale(1.2);

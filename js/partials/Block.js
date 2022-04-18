@@ -13,7 +13,7 @@ class Block{
             bit.update()
         })
      
-        this.img.setVisible(!this.scene.rawModeEnabled)
+        this.img.setVisible(!this.scene.rawModeEnabled) //changes image visbility
     }
 
     createBits(x,y){ //loads the initial bits
@@ -30,7 +30,7 @@ class Block{
         let bitSequence = ''
 
         this.bits.forEach(bit =>{
-            bitSequence += bit.bit
+            bitSequence += bit.bitValue
         })
 
 

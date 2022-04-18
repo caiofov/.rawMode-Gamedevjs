@@ -1,7 +1,7 @@
 class Player{
-    constructor(scene, control, x, y){
+    constructor(scene, x, y){
         this.scene = scene
-        this.control = control
+        this.control = this.scene.input.keyboard.createCursorKeys()
 
         this.physicsBody = this.scene.physics.add.sprite(x, y, 'player')
         .setCollideWorldBounds(true)
@@ -14,7 +14,7 @@ class Player{
 
     }
 
-    move(){
+    update(){
         if(this.control.left.isDown){
             this.physicsBody.flipX = true //reverte horizontalmente a imagem
             // this.physicsBody.anims.play('walk', true) //true -> animaçao deve ser executada mesmo se outro evento estiver acontecendo com esse objeto
