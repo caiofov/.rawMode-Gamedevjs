@@ -6,6 +6,12 @@ class Preloader extends Phaser.Scene{
         this.load.image('background', '../../assets/img/sky.png')
         // this.load.image('help_button', 'img/coin.png')
         this.load.image('help_menu', '../../assets/img/helpmenu.png')
+        this.load.image('bit1', '../../assets/img/1.png')
+        this.load.image('bit0', '../../assets/img/0.png')
+        this.load.image('water', '../../assets/img/water.png')
+        this.load.image('dirt', '../../assets/img/dirt.png')
+        this.load.image('grass', '../../assets/img/grass.png')
+
 
         this.load.spritesheet('coin', '../../assets/img/coin.png', {frameWidth:36, frameHeight:40})
         this.load.spritesheet('binary', '../../assets/img/binary.png', {frameWidth:800, frameHeight:450})
@@ -45,6 +51,6 @@ class Preloader extends Phaser.Scene{
             repeat: 0
         })
 
-        this.scene.start('StartScene')
+        this.scene.start('Scene1')
     }
 }
