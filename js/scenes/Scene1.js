@@ -21,7 +21,13 @@ class Scene1 extends Phaser.Scene{
         this.player.collision()
 
         this.blocks = [new Block(this, 100, 100, 'metal'), new Block(this,200, 100, 'spike')]
-       
+        
+        this.rawModeEnabled = false
+
+        this.input.keyboard.addKey('space')
+            .on('down', ()=>{
+                this.rawModeEnabled = !this.rawModeEnabled
+            })
     }
 
     update(){
@@ -31,6 +37,7 @@ class Scene1 extends Phaser.Scene{
         this.blocks.forEach(block =>{
             block.update()
         })
+        
     }
 
 }

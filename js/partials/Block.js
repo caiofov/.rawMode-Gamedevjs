@@ -10,8 +10,10 @@ class Block{
 
     update(){
         this.bits.forEach(bit =>{
-            bit.mouseEvents()
+            bit.update()
         })
+     
+        this.img.setVisible(!this.scene.rawModeEnabled)
     }
 
     createBits(x,y){ //loads the initial bits
