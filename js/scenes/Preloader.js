@@ -59,6 +59,6 @@ class Preloader extends Phaser.Scene{
             repeat: 0
         })
 
-        this.scene.start('LevelMenu')
+        this.scene.start('StartScene')
     }
 }
