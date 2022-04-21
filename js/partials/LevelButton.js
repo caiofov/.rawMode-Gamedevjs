@@ -8,6 +8,7 @@ class LevelButton{
             {fontSize: '32px', color: 'gray'})
         .setOrigin(.5)
         .setInteractive()
+        // .setAlign('center')
 
         this.binaryText = this.findBinaryText()
         
@@ -56,6 +57,7 @@ class LevelButton{
                 zeros +='0'
             }
         }
-        return (zeros+bin).split('').join(' ')
+        let stringWithSpace = (zeros+bin).split('').join(' ')
+        return stringWithSpace
     }
 }
