@@ -7,12 +7,14 @@ var blockTypeDictionary =
     'spike': '1000',
 }
 
+var numberOfLevels = 5
+
 window.onload = function(){
     const config = {
         type: Phaser.Canvas, 
         width: 800,
         height: 600,
-        scene: [Preloader, StartScene, Scene1], 
+        scene: [Preloader, StartScene, LevelMenu, Level1], 
         physics: {
             default: 'arcade', 
             arcade: {

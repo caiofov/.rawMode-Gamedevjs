@@ -18,18 +18,14 @@ class StartScene extends Phaser.Scene{
             this.startText.setVisible(true)
         }
         this.startText.on(Phaser.Input.Events.GAMEOBJECT_POINTER_OVER, () =>{
-            if(!this.isMenuOpen){
-                this.startText.setScale(1.2);
-            }
+            this.startText.setScale(1.2);
         })
 
         this.startText.on(Phaser.Input.Events.GAMEOBJECT_POINTER_OUT, () =>{
-            if(!this.isMenuOpen){
-                this.startText.setScale(1.0);
-            }
+            this.startText.setScale(1.0);
         })
         this.startText.on(Phaser.Input.Events.GAMEOBJECT_POINTER_DOWN, () =>{
-            this.scene.start('Scene1')
+            this.scene.start('LevelMenu')
         })
         
     }
