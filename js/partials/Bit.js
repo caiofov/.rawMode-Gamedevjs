@@ -3,7 +3,7 @@ class Bit{
         this.scene = scene
         this.block = block //class Block
         this.bitValue = bit //'1' or '0' -> string
-        this.bitText = this.scene.add.text(x,y, bit, {fontSize: '32px'})
+        this.bitText = this.scene.add.text(x,y, bit, {fontSize: '15px'})
         .setOrigin(.5)
         .setInteractive()
         this.cursorIsDown = false

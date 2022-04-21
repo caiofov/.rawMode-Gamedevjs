@@ -11,6 +11,11 @@ class Preloader extends Phaser.Scene{
         this.load.image('metal', '../../assets/img/metal.png')
         //spike block
         this.load.image('spike', '../../assets/img/spike.png')
+        //water block
+        this.load.image('water', '../../assets/img/water.png')
+        // cloud block
+        this.load.image('cloud', '../../assets/img/cloud.png')
+
 
         //help button
         this.load.spritesheet('coin', '../../assets/img/coin.png', {frameWidth:36, frameHeight:40})
@@ -54,6 +59,6 @@ class Preloader extends Phaser.Scene{
             repeat: 0
         })
 
-        this.scene.start('StartScene')
+        this.scene.start('Scene1')
     }
 }

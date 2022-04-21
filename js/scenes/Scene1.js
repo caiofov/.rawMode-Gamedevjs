@@ -20,7 +20,7 @@ class Scene1 extends Phaser.Scene{
         this.player.collision()
 
         //list of blocks on the level
-        this.blocks = [new Block(this, 100, 100, 'metal'), new Block(this,200, 100, 'spike')]
+        this.blocks = [new Block(this, 100, 100, 'metal'), new Block(this,200, 100, 'spike'), new Block(this, 300, 100, 'water'), new Block(this, 400, 100, 'cloud')]
 
         //enter raw mode on pressing space key
         this.input.keyboard.addKey('space')

@@ -1,4 +1,12 @@
 var game
+var blockTypeDictionary = 
+{
+    'cloud': '0000',
+    'water': '0001',
+    'metal': '0010',
+    'spike': '1000',
+}
+
 window.onload = function(){
     const config = {
         type: Phaser.Canvas, 
