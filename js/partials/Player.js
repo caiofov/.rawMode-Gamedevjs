@@ -6,6 +6,8 @@ class Player{
         this.physicsBody = this.scene.physics.add.sprite(x, y, 'player')
         .setCollideWorldBounds(true)
         .setBounce(.2)
+        .setDisplaySize(50,50)
+        .refreshBody()
 
         this.canJump = true
     }

@@ -9,8 +9,6 @@ class Level1 extends Phaser.Scene{
 
         //background config
         this.background = this.add.image(0,0,'background').setOrigin(0)
-        this.background.displayWidth = game.config.width 
-        this.background.displayHeight = game.config.height
 
         //help menu
         this.help_menu = new HelpMenu(this)
@@ -25,11 +23,13 @@ class Level1 extends Phaser.Scene{
                         new Block(this, 300, 100, 'water'), 
                         new Block(this, 400, 100, 'cloud')]
 
-        //enter raw mode on pressing space key
-        this.input.keyboard.addKey('space')
-            .on('down', ()=>{
-                this.rawModeEnabled = !this.rawModeEnabled
-            })
+        //adds goal
+        this.goal = this.physics.add.staticImage(700,550,'finish_line').setOrigin(0).setDisplaySize(50,50).refreshBody()
+        
+        //adds features and congifs the scene
+        this.base = new SceneBase(this)
+
+        
     }
 
     update(){
@@ -38,8 +38,23 @@ class Level1 extends Phaser.Scene{
 
         this.blocks.forEach(block =>{
             block.update()
-        })
-        
+        })   
+    }
+
+    defeat(){
+        //placeholder
+        this.player.physicsBody.x = 0
+        this.player.physicsBody.y = 0
+        this.player.physicsBody.setVelocityX(0)
+        this.player.physicsBody.setVelocityY(0)
+    }
+
+    win(){
+        //placeholder
+        this.player.physicsBody.x = 0
+        this.player.physicsBody.y = 0
+        this.player.physicsBody.setVelocityX(0)
+        this.player.physicsBody.setVelocityY(0)
     }
 
 }

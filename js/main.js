@@ -7,6 +7,11 @@ var blockTypeDictionary =
     'spike': '1000',
 }
 
+var nonCollisionBlocks = [
+    'cloud',
+    'water'
+]
+
 var numberOfLevels = 5
 
 window.onload = function(){

@@ -24,6 +24,10 @@ class Preloader extends Phaser.Scene{
         // https://www.videvo.net/video/binary-numbers-01-alpha-matte/1343/ -> video
         //player spritesheet
         this.load.spritesheet('player', '../assets/img/player.png', {frameWidth:32, frameHeight:32})
+        //raw player spritesheet
+        this.load.spritesheet('player_raw', '../assets/img/player_raw.png', {frameWidth:32, frameHeight:32})
+        //finish line
+        this.load.spritesheet('finish_line', '../assets/img/finishline.png', {frameWidth:32, frameHeight:32})
     
     }
     create(){
