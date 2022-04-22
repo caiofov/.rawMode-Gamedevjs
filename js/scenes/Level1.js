@@ -9,9 +9,6 @@ class Level1 extends Phaser.Scene{
 
         //background config
         this.background = this.add.image(0,0,'background').setOrigin(0)
-
-        //help menu
-        this.help_menu = new HelpMenu(this)
         
         //player config
         this.player = new Player(this, 50, 50)
@@ -26,9 +23,11 @@ class Level1 extends Phaser.Scene{
         //adds goal
         this.goal = this.physics.add.staticImage(700,550,'finish_line').setOrigin(0).setDisplaySize(50,50).refreshBody()
         
-        //adds features and congifs the scene
+        //adds features and configs the scene
         this.base = new SceneBase(this)
 
+        //help menu
+        this.help_menu = new HelpMenu(this)
         
     }
 

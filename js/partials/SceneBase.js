@@ -22,6 +22,7 @@ class SceneBase{
                 else{
                     this.scene.player.physicsBody.setTexture('player')
                     this.add_collisions()
+                    this.scene.selectedBit.bitText.setColor('white')
                     this.scene.selectedBit = null
                 }
 

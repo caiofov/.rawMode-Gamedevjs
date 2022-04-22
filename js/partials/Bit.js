@@ -21,6 +21,7 @@ class Bit{
                     }
                     else{
                         this.scene.selectedBit = this
+                        this.bitText.setColor('gray')
                     }
                     this.cursorIsDown = true
             }})
@@ -42,6 +43,7 @@ class Bit{
     }
 
     switchBits(){
+        this.scene.selectedBit.bitText.setColor('white')
         //switch bits
         let selectedText = this.scene.selectedBit.bitValue
         this.scene.selectedBit.bitValue = this.bitValue
