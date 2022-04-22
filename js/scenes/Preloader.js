@@ -17,11 +17,12 @@ class Preloader extends Phaser.Scene{
         this.load.image('cloud', '../../assets/img/cloud.png')
 
 
-        //help button
-        this.load.spritesheet('coin', '../../assets/img/coin.png', {frameWidth:36, frameHeight:40})
+        //help button (question mark)
+        this.load.spritesheet('question', '../../assets/img/question.png', {frameWidth:16, frameHeight:16})
         //start background
         this.load.spritesheet('binary', '../../assets/img/binary.png', {frameWidth:800, frameHeight:450})
         // https://www.videvo.net/video/binary-numbers-01-alpha-matte/1343/ -> video
+        
         //player spritesheet
         this.load.spritesheet('player', '../assets/img/player.png', {frameWidth:32, frameHeight:32})
         //raw player spritesheet
@@ -44,9 +45,9 @@ class Preloader extends Phaser.Scene{
         //help button
         this.anims.create({
             key:'spin',
-            frames: this.anims.generateFrameNumbers('coin', {
+            frames: this.anims.generateFrameNumbers('question', {
                 start:0,
-                end:5
+                end:11
             }),
             frameRate: 20,
             repeat: -1,
