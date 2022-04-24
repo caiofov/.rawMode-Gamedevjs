@@ -15,7 +15,10 @@ class Level1 extends Phaser.Scene{
         this.player.collision()
 
         //list of blocks on the level
-        this.blocks = [new Block(this, 100, 100, 'metal'), 
+        this.blocks = [ new Block(this, 0, 550, 'metal'),
+                        new Block(this, 50, 550, 'metal'),
+                        new Block(this, 100, 550, 'metal'),
+                        new Block(this, 100, 100, 'metal'), 
                         new Block(this,200, 100, 'spike'), 
                         new Block(this, 300, 100, 'water'), 
                         new Block(this, 400, 100, 'cloud')]

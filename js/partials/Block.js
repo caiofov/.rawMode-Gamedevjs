@@ -23,10 +23,10 @@ class Block{
             if(type == this.type){
                 let bits = blockTypeDictionary[type]
                 return[
-                    new Bit(this.scene, this, x+5,y+5, bits[0]),
-                    new Bit(this.scene, this, x+20, y+5, bits[1]),
-                    new Bit(this.scene, this, x+5, y+20, bits[2]),
-                    new Bit(this.scene, this, x+20, y+20, bits[3])
+                    new Bit(this.scene, this, x+15,y+12, bits[0]),
+                    new Bit(this.scene, this, x+25+15, y+12, bits[1]),
+                    new Bit(this.scene, this, x+15, y+25+12, bits[2]),
+                    new Bit(this.scene, this, x+25+15, y+25+12, bits[3])
                 ]
                 
             }

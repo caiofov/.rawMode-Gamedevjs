@@ -22,8 +22,10 @@ class SceneBase{
                 else{
                     this.scene.player.physicsBody.setTexture('player')
                     this.add_collisions()
-                    this.scene.selectedBit.bitText.setColor('white')
-                    this.scene.selectedBit = null
+                    if(this.scene.selectedBit){
+                        this.scene.selectedBit.bitText.setTexture('bit' + this.scene.selectedBit.bitValue)
+                        this.scene.selectedBit = null
+                    }
                 }
 
                 
@@ -41,12 +43,17 @@ class SceneBase{
         })
 
         this.scene.blocks.forEach((block)=>{
+            block.img.setDepth(2)
+            if(block.type == 'cloud'){
+                block.img.setDepth(0)
+            }
             if(block.type == 'spike'){
                 this.blockColliders.push(
                     this.scene.physics.add.collider(this.scene.player.physicsBody, block.img, this.spike_collision, null, this.scene))
             }
             else if(!nonCollisionBlocks.includes(block.type))
                 this.blockColliders.push(this.scene.physics.add.collider(this.scene.player.physicsBody, block.img))
+            
             
         })
     }

@@ -3,9 +3,10 @@ class Bit{
         this.scene = scene
         this.block = block //class Block
         this.bitValue = bit //'1' or '0' -> string
-        this.bitText = this.scene.add.text(x,y, bit, {fontSize: '15px'})
-        .setOrigin(.5)
-        .setInteractive()
+        this.bitText = this.scene.add.image(x,y,'bit'+this.bitValue).setDisplaySize(25,25).setInteractive()
+        //this.bitText = this.scene.add.text(x,y, bit, {fontSize: '15px'})
+        //.setOrigin(.5)
+        //.setInteractive()
         this.cursorIsDown = false
     }
 
@@ -21,7 +22,7 @@ class Bit{
                     }
                     else{
                         this.scene.selectedBit = this
-                        this.bitText.setColor('gray')
+                        this.bitText.setTexture('gray'+this.bitValue)
                     }
                     this.cursorIsDown = true
             }})
@@ -30,20 +31,20 @@ class Bit{
             })
 
             this.bitText.on(Phaser.Input.Events.GAMEOBJECT_POINTER_OVER, () =>{
-                this.bitText.setScale(1.2);
+                this.bitText.setDisplaySize(30,30);
             })
             this.bitText.on(Phaser.Input.Events.GAMEOBJECT_POINTER_OUT, () =>{
-                this.bitText.setScale(1.0);
+                this.bitText.setDisplaySize(25,25);
             })
         }
     }
 
     updateText(){
-        this.bitText.setText(this.bitValue)
+        this.bitText.setTexture('bit'+this.bitValue)
     }
 
     switchBits(){
-        this.scene.selectedBit.bitText.setColor('white')
+        this.scene.selectedBit.bitText.setTexture('gray'+this.bitValue)
         //switch bits
         let selectedText = this.scene.selectedBit.bitValue
         this.scene.selectedBit.bitValue = this.bitValue
