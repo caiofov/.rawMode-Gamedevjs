@@ -21,6 +21,11 @@ class Preloader extends Phaser.Scene{
         this.load.image('gray0', 'assets/img/gray0.png')
         this.load.image('gray1', 'assets/img/gray1.png')
 
+        //restart button
+        this.load.image('restart', 'assets/img/restart.png')
+        // https://www.onlinewebfonts.com/icon/510461
+        this.load.image('restart_raw', 'assets/img/restart_raw.png')
+
         //help button (question mark)
         this.load.spritesheet('question', 'assets/img/question.png', {frameWidth:16, frameHeight:16})
         //start background
@@ -68,6 +73,6 @@ class Preloader extends Phaser.Scene{
             repeat: 0
         })
 
-        this.scene.start('StartScene')
+        this.scene.start('Level1')
     }
 }
