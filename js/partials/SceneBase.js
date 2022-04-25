@@ -13,15 +13,17 @@ class SceneBase{
         this.scene.input.keyboard.addKey('space')
             .on('down', ()=>{
                 this.scene.rawModeEnabled = !this.scene.rawModeEnabled
-                //switch bacground
+                //switch background
                 this.scene.background.setVisible(!this.scene.rawModeEnabled)
                 //switch player skin
                 if(this.scene.rawModeEnabled){
                     this.scene.player.physicsBody.setTexture('player_raw')
+                    this.scene.physics.pause()   
                 }
                 else{
                     this.scene.player.physicsBody.setTexture('player')
                     this.add_collisions()
+                    this.scene.physics.resume()
                     if(this.scene.selectedBit){
                         this.scene.selectedBit.bitText.setTexture('bit' + this.scene.selectedBit.bitValue)
                         this.scene.selectedBit = null
@@ -32,7 +34,7 @@ class SceneBase{
             })
         
         this.help_menu = new HelpMenu(this.scene)
-        this.restartButton = new RestartButton(this.scene, game.config.width - 32, 0, 32)
+        this.restartButton = new RestartButton(this.scene, game.config.width, 0, 32)
         
         this.gameOver = undefined
 

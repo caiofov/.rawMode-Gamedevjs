@@ -28,9 +28,6 @@ class Level1 extends Phaser.Scene{
         
         //adds features and configs the scene
         this.base = new SceneBase(this)
-
-        //help menu
-        
         
     }
 
