@@ -6,6 +6,7 @@ class HelpMenu{
         this.help_screen = this.scene.add.image(0,0,'help_menu')
         .setOrigin(0)
         .setScale(1.2)
+        .setDepth(0)
 
         this.help_screen.displayHeight = game.config.height
         this.help_screen.x = -1*this.help_screen.displayWidth
@@ -74,6 +75,7 @@ class HelpMenu{
                 {fontSize: '20px', color: 'black'})
             .setOrigin(.5)
             .setWordWrapWidth(50)
+            .setDepth(0)
 
             this.blocks_images.push(block)
             this.blocks_binary.push(text)
