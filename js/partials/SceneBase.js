@@ -31,11 +31,21 @@ class SceneBase{
                 
             })
         
+        this.help_menu = new HelpMenu(this.scene)
+        this.restartButton = new RestartButton(this.scene, game.config.width - 32, 0, 32)
+        
+        this.gameOver = undefined
 
     }
 
     update(){
-
+        if(this.gameOver){
+            this.gameOver.update()
+        }
+        else{
+            this.help_menu.update()
+            this.restartButton.update()
+        }
     }
 
     add_collisions(){
@@ -69,7 +79,8 @@ class SceneBase{
 
     game_over(){
         this.scene.physics.pause() //congela os eventos físicos
-
         this.scene.player.kill()
+        this.help_menu.help_button.anims.stop()
+        this.gameOver = new GameOver(this.scene)
     }
 }

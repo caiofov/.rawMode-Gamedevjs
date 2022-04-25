@@ -20,9 +20,10 @@ class RestartButton{
             this.button.setTexture('restart')
             this.texture_israw = false
         }
-        this.button.on(Phaser.Input.Events.GAMEOBJECT_POINTER_DOWN, () =>{
-            this.scene.restart()
-        })
+
+        this.button.on(Phaser.Input.Events.GAMEOBJECT_POINTER_DOWN, (event) =>{
+            this.scene.scene.restart()
+        }, game)
         this.button.on(Phaser.Input.Events.GAMEOBJECT_POINTER_OVER, () =>{
             this.button.setDisplaySize(this.size*1.5,this.size*1.5)
         })

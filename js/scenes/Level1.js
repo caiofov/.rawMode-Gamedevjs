@@ -30,16 +30,13 @@ class Level1 extends Phaser.Scene{
         this.base = new SceneBase(this)
 
         //help menu
-        this.help_menu = new HelpMenu(this)
-
-        this.restartButton = new RestartButton(this, game.config.width - 32, 0, 32)
+        
         
     }
 
     update(){
-        this.help_menu.update()
+        this.base.update()
         this.player.update()
-        this.restartButton.update()
 
         this.blocks.forEach(block =>{
             block.update()
