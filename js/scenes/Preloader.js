@@ -4,23 +4,23 @@ class Preloader extends Phaser.Scene{
     }
     preload(){
         //scene1 background
-        this.load.image('background', '../../assets/img/sky.png')
+        this.load.image('background', 'assets/img/sky.png')
         //help menu
-        this.load.image('help_menu', '../../assets/img/helpmenu.png')
+        this.load.image('help_menu', 'assets/img/helpmenu.png')
         //metal block
-        this.load.image('metal', '../../assets/img/metal.png')
+        this.load.image('metal', 'assets/img/metal.png')
         //spike block
-        this.load.image('spike', '../../assets/img/spike.png')
+        this.load.image('spike', 'assets/img/spike.png')
         //water block
-        this.load.image('water', '../../assets/img/water.png')
+        this.load.image('water', 'assets/img/water.png')
         // cloud block
-        this.load.image('cloud', '../../assets/img/cloud.png')
+        this.load.image('cloud', 'assets/img/cloud.png')
 
 
         //help button (question mark)
-        this.load.spritesheet('question', '../../assets/img/question.png', {frameWidth:16, frameHeight:16})
+        this.load.spritesheet('question', 'assets/img/question.png', {frameWidth:16, frameHeight:16})
         //start background
-        this.load.spritesheet('binary', '../../assets/img/binary.png', {frameWidth:800, frameHeight:450})
+        this.load.spritesheet('binary', 'assets/img/binary.png', {frameWidth:800, frameHeight:450})
         // https://www.videvo.net/video/binary-numbers-01-alpha-matte/1343/ -> video
         
         //player spritesheet
