@@ -15,8 +15,9 @@ class Player{
         this.speed = 300
     }
 
-    collision(){
-
+    kill(){
+        this.physicsBody.setTint(0xff0000) //coloração vermelha por cima da imagem da player
+        this.physicsBody.anims.stop() //para a animação do player
     }
 
     update(){

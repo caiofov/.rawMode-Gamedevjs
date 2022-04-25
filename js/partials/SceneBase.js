@@ -63,7 +63,13 @@ class SceneBase{
     spike_collision(_player, _spike){
         //checks if lower part of the player is touching the upper part of the spike
         if(_player.body.touching.down && _spike.body.touching.up){
-            this.defeat()
+            this.base.game_over()
         }
+    }
+
+    game_over(){
+        this.scene.physics.pause() //congela os eventos físicos
+
+        this.scene.player.kill()
     }
 }

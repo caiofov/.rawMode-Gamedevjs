@@ -12,12 +12,12 @@ class Level1 extends Phaser.Scene{
         
         //player config
         this.player = new Player(this, 50, 50)
-        this.player.collision()
 
         //list of blocks on the level
         this.blocks = [ new Block(this, 0, 550, 'metal'),
                         new Block(this, 50, 550, 'metal'),
                         new Block(this, 100, 550, 'metal'),
+                        new Block(this, 150, 550, 'spike'),
                         new Block(this, 100, 100, 'metal'), 
                         new Block(this,200, 100, 'spike'), 
                         new Block(this, 300, 100, 'water'), 
@@ -46,20 +46,11 @@ class Level1 extends Phaser.Scene{
         })   
     }
 
-    defeat(){
-        //placeholder
-        this.player.physicsBody.x = 0
-        this.player.physicsBody.y = 0
-        this.player.physicsBody.setVelocityX(0)
-        this.player.physicsBody.setVelocityY(0)
+    win(){
+        this.scene.physics.pause()
+        //iniciar a nova fase
     }
 
-    win(){
-        //placeholder
-        this.player.physicsBody.x = 0
-        this.player.physicsBody.y = 0
-        this.player.physicsBody.setVelocityX(0)
-        this.player.physicsBody.setVelocityY(0)
-    }
+    
 
 }
