@@ -5,11 +5,14 @@ class Player{
 
         this.physicsBody = this.scene.physics.add.sprite(x, y, 'player')
         .setCollideWorldBounds(true)
-        .setBounce(.2)
         .setDisplaySize(50,50)
         .refreshBody()
+        .setDepth(1)
+        //.setBounce(.2)
 
         this.canJump = true
+
+        this.speed = 300
     }
 
     collision(){
@@ -20,25 +23,25 @@ class Player{
         if(this.control.left.isDown){
             this.physicsBody.flipX = true //reverte horizontalmente a imagem
             // this.physicsBody.anims.play('walk', true) //true -> animaçao deve ser executada mesmo se outro evento estiver acontecendo com esse objeto
-            this.physicsBody.setVelocityX(-450)
+            this.physicsBody.setVelocityX(-this.speed)
         }
         else if(this.control.right.isDown){
             this.physicsBody.flipX = false
             // this.physicsBody.anims.play('walk',true)
-            this.physicsBody.setVelocityX(450)
+            this.physicsBody.setVelocityX(this.speed)
         }
         else{
             this.physicsBody.setVelocityX(0)
             // this.physicsBody.setFrame(0)
         }
 
-        if(this.control.up.isDown && this.canJump ){ //&& this.physicsBody.body.touching.down
+        if(this.control.up.isDown && this.physicsBody.body.touching.down){//this.canJump ){ //&& this.physicsBody.body.touching.down
             this.physicsBody.setVelocityY(-500)
             this.canJump = false
         }
-        else if(!this.control.up.isDown && !this.canJump ){ //&& this.physicsBody.body.touching.down
-            this.canJump = true
-        }
+        //else if(!this.control.up.isDown && !this.canJump ){ //&& this.physicsBody.body.touching.down
+        //    this.canJump = true
+        //}
 
         if(!this.physicsBody.body.touching.down){//ou está pulando ou está caindo
             // this.physicsBody.setFrame(

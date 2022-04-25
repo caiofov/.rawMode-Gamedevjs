@@ -14,8 +14,12 @@ class Preloader extends Phaser.Scene{
         //water block
         this.load.image('water', 'assets/img/water.png')
         // cloud block
-        this.load.image('cloud', 'assets/img/cloud.png')
-
+        this.load.image('cloud', '../../assets/img/cloud.png')
+        //bits
+        this.load.image('bit0', '../../assets/img/bit0.png')
+        this.load.image('bit1', '../../assets/img/bit1.png')
+        this.load.image('gray0', '../../assets/img/gray0.png')
+        this.load.image('gray1', '../../assets/img/gray1.png')
 
         //help button (question mark)
         this.load.spritesheet('question', 'assets/img/question.png', {frameWidth:16, frameHeight:16})
