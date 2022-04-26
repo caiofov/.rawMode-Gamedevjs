@@ -4,7 +4,7 @@ class Preloader extends Phaser.Scene{
     }
     preload(){
         //scene1 background
-        this.load.image('background', 'assets/img/sky.png')
+        this.load.image('background', 'assets/img/background.png')
         //help menu
         this.load.image('help_menu', 'assets/img/helpmenu.png')
         //metal block
@@ -112,7 +112,7 @@ class Preloader extends Phaser.Scene{
             repeat: -1
         })
 
-        this.scene.start('Tutorial2')
+        this.scene.start('StartScene')
     }
 
 }
