@@ -57,7 +57,7 @@ class Tutorial2 extends Phaser.Scene{
         this.blocks.forEach(block =>{
             block.update()
         })
-        this.update_arrows()
+        this.update_buttons()
     }
 
     load_content(){
@@ -70,7 +70,7 @@ class Tutorial2 extends Phaser.Scene{
         }
     }
 
-    update_arrows(){
+    update_buttons(){
         this.arrow_left.on(Phaser.Input.Events.GAMEOBJECT_POINTER_OVER, () =>{
             this.arrow_left.setScale(1.2);
         })
@@ -90,6 +90,17 @@ class Tutorial2 extends Phaser.Scene{
         })
         this.arrow_right.on(Phaser.Input.Events.GAMEOBJECT_POINTER_DOWN, () =>{
             this.scene.start('Tutorial3')
+            this.confirm_effect.play()
+        })
+
+        this.start_button.on(Phaser.Input.Events.GAMEOBJECT_POINTER_OVER, () =>{
+            this.start_button.setScale(1.2);
+        })
+        this.start_button.on(Phaser.Input.Events.GAMEOBJECT_POINTER_OUT, () =>{
+            this.start_button.setScale(1.0);
+        })
+        this.start_button.on(Phaser.Input.Events.GAMEOBJECT_POINTER_DOWN, () =>{
+            this.scene.start('LevelMenu')
             this.confirm_effect.play()
         })
     }
