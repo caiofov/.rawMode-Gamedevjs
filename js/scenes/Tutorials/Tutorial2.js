@@ -21,6 +21,14 @@ class Tutorial2 extends Phaser.Scene{
         .setWordWrapWidth(game.config.width - 100)
         .setAlign('center')
 
+
+        this.subtext = this.add.text(game.config.width/2, 160, 
+            "(You can try it out here)", 
+            {fontSize: '18px'})
+            .setOrigin(.5,0)
+            .setAlign('center')
+
+
         this.rawModeEnabled = false
         this.selectedBit = null
         this.blocks = []

@@ -10,7 +10,7 @@ class Tutorial1 extends Phaser.Scene{
         .setOrigin(.5,0)
         .setWordWrapWidth(game.config.width - 50)
         .setAlign('center')
-        
+
         this.arrow = this.add.text(game.config.width-5, game.config.height, 'ᐅ', 
         {fontSize: '40px'})
         .setOrigin(1)

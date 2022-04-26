@@ -11,8 +11,6 @@ class Preloader extends Phaser.Scene{
         this.load.image('metal', 'assets/img/metal.png')
         //spike block
         this.load.image('spike', 'assets/img/spike.png')
-        //water block
-        this.load.image('water', 'assets/img/water.png')
         // cloud block
         this.load.image('cloud', 'assets/img/cloud.png')
         //bits
@@ -20,6 +18,12 @@ class Preloader extends Phaser.Scene{
         this.load.image('bit1', 'assets/img/bit1.png')
         this.load.image('gray0', 'assets/img/gray0.png')
         this.load.image('gray1', 'assets/img/gray1.png')
+
+        //non-interactive blocks
+        this.load.image('normal1', 'assets/img/normal1.png')
+        this.load.image('normal2', 'assets/img/normal2.png')
+        this.load.image('normal3', 'assets/img/normal3.png')
+        this.load.image('normal4', 'assets/img/normal4.png')
 
         //restart button
         this.load.image('restart_white', 'assets/img/restart_white.png')
@@ -108,6 +112,6 @@ class Preloader extends Phaser.Scene{
             repeat: -1
         })
 
-        this.scene.start('Tutorial3')
+        this.scene.start('Tutorial2')
     }
 }

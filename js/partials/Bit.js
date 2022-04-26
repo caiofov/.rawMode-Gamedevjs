@@ -1,10 +1,11 @@
 class Bit{
-    constructor(scene,block, x,y, bit){
+    constructor(scene,block, x,y, bit, scale = 1){
         this.scene = scene
+        this.scale = scale
         this.block = block //class Block
         this.bitValue = bit //'1' or '0' -> string
         this.bitText = this.scene.add.image(x,y,'bit'+this.bitValue)
-        .setDisplaySize(25,25)
+        .setDisplaySize(25*this.scale,25*this.scale)
         .setInteractive()
         //this.bitText = this.scene.add.text(x,y, bit, {fontSize: '15px'})
         //.setOrigin(.5)
@@ -33,10 +34,10 @@ class Bit{
             })
 
             this.bitText.on(Phaser.Input.Events.GAMEOBJECT_POINTER_OVER, () =>{
-                this.bitText.setDisplaySize(30,30);
+                this.bitText.setDisplaySize(30*this.scale,30*this.scale);
             })
             this.bitText.on(Phaser.Input.Events.GAMEOBJECT_POINTER_OUT, () =>{
-                this.bitText.setDisplaySize(25,25);
+                this.bitText.setDisplaySize(25*this.scale,25*this.scale);
             })
         }
     }
