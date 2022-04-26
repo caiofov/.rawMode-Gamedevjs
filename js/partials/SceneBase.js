@@ -15,6 +15,7 @@ class SceneBase{
 
         this.game_paused = false
 
+
         //music
         this.music = this.scene.sound.add('music1', {volume: 0.005})
         this.music.play()

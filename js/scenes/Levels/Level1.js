@@ -10,6 +10,10 @@ class Level1 extends Phaser.Scene{
         //background config
         this.background = this.add.image(0,0,'background').setOrigin(0)
 
+        this.static_blocks = this.physics.add.staticImage(50,game.config.height-100, 'static_level2')
+        .setScale(1.56)
+        .setOrigin(0,.5)
+        .refreshBody()
 
         //player config
         this.player = new Player(this, 50, 50)
@@ -46,6 +50,7 @@ class Level1 extends Phaser.Scene{
     }
 
     win(){
+        this.base.game_paused = true
         this.player.win()
         this.physics.pause()
         //iniciar a nova fase
