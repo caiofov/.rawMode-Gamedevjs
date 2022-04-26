@@ -14,7 +14,7 @@ class Tutorial2 extends Phaser.Scene{
         .setOrigin(1)
         .setInteractive()
 
-        this.confirm_effect = this.scene.sound.add('confirm', {volume:1})
+        this.confirm_effect = this.sound.add('confirm', {volume:1})
 
         this.text = this.add.text(game.config.width/2, 30, 
         "You can change the bit sequence by swaping two bits \n\nPress [SPACE] to enter the raw mode and click on the bit", 

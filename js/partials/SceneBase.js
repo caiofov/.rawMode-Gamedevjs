@@ -32,11 +32,13 @@ class SceneBase{
                 this.scene.background.setVisible(!this.scene.rawModeEnabled)
                 //switch player skin
                 if(this.scene.rawModeEnabled){
+                    this.scene.static_blocks.setVisible(false)
                     this.scene.anims.pauseAll()
                     this.scene.player.physicsBody.setTexture('player_raw')
                     this.scene.physics.pause()   
                 }
                 else{
+                    this.scene.static_blocks.setVisible(true)
                     this.scene.anims.resumeAll()
                     // this.scene.player.physicsBody.setTexture('player')
                     this.scene.player.physicsBody.anims.play('walk')

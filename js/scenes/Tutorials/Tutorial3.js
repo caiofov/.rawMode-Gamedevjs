@@ -9,7 +9,7 @@ class Tutorial3 extends Phaser.Scene{
         .setOrigin(0,1)
         .setInteractive()
 
-        this.confirm_effect = this.scene.sound.add('confirm', {volume:1})
+        this.confirm_effect = this.sound.add('confirm', {volume:1})
 
 
         this.text1 = this.add.text(game.config.width/2, 300, 
