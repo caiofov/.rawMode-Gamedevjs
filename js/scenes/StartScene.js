@@ -3,6 +3,8 @@ class StartScene extends Phaser.Scene{
         super('StartScene')
     }
     create(){
+        this.physics.world.gravity.y = 65
+
         this.background = this.add.sprite(0,0,'binary').setOrigin(0)
         this.background.displayHeight = game.config.height
         this.background.anims.play('binary_background')
