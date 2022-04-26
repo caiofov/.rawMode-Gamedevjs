@@ -7,6 +7,7 @@ class Preloader extends Phaser.Scene{
         this.load.image('background', 'assets/img/background.png')
         //help menu
         this.load.image('help_menu', 'assets/img/helpmenu.png')
+        this.load.image('gameover_background', 'assets/img/gameover.png')
         //metal block
         this.load.image('metal', 'assets/img/metal.png')
         //spike block
