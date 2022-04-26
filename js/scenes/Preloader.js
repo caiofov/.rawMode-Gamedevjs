@@ -55,11 +55,16 @@ class Preloader extends Phaser.Scene{
         this.load.image('arrows','assets/img/arrows.png')
         //https://www.flaticon.com/premium-icon/arrows_1782520?term=arrow%20key&page=1&position=10&page=1&position=10&related_id=1782520&origin=tag
         
-        //levels
+        //level (static blocks)
         this.load.image('static_level2_1','assets/img/levels/level2_1.png')
         this.load.image('static_level2_2','assets/img/levels/level2_2.png')
         this.load.image('static_level3_1','assets/img/levels/level3_1.png')
         this.load.image('static_level3_2','assets/img/levels/level3_2.png')
+        this.load.image('static_level4_1','assets/img/levels/level4_1.png')
+        this.load.image('static_level4_2','assets/img/levels/level4_2.png')
+        this.load.image('static_level4_3','assets/img/levels/level4_3.png')
+        this.load.image('static_level4_4','assets/img/levels/level4_4.png')
+        this.load.image('static_level4_5','assets/img/levels/level4_5.png')
     }
     create(){
         //player walking animation
@@ -121,7 +126,7 @@ class Preloader extends Phaser.Scene{
             repeat: -1
         })
 
-        this.scene.start('Level3')
+        this.scene.start('Level4')
     }
 
 }
