@@ -10,7 +10,7 @@ class Level1 extends Phaser.Scene{
         //background config
         this.background = this.add.image(0,0,'background').setOrigin(0)
 
-        
+
         //player config
         this.player = new Player(this, 50, 50)
 
@@ -47,7 +47,7 @@ class Level1 extends Phaser.Scene{
 
     win(){
         this.player.win()
-        this.scene.physics.pause()
+        this.physics.pause()
         //iniciar a nova fase
     }
 

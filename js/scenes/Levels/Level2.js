@@ -42,8 +42,8 @@ class Level2 extends Phaser.Scene{
         this.goal = this.add.sprite(650,game.config.height-100,'finish_line')
         .setOrigin(0).setDisplaySize(50,50)
         this.goal.anims.play('glow')
-        this.physics.add.staticImage(650,game.config.height-100,'finish_line').setOrigin(0).setDisplaySize(50,50).refreshBody()
-        
+        this.phygoal = this.physics.add.staticImage(650,game.config.height-100,'finish_line').setOrigin(0).setDisplaySize(50,50).refreshBody()
+
         //adds features and configs the scene
         this.base = new SceneBase(this)
         

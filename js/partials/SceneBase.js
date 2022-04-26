@@ -7,6 +7,9 @@ class SceneBase{
 
         //add collisions
         this.scene.physics.add.overlap(this.scene.player.physicsBody, this.scene.phygoal, this.scene.win, null, this.scene)
+        this.scene.physics.add.collider(this.scene.player.physicsBody, this.scene.static_blocks)
+
+
         this.blockColliders = []
         this.add_collisions()
 
@@ -69,7 +72,6 @@ class SceneBase{
         this.blockColliders.forEach((blockCollider)=>{
             this.scene.physics.world.removeCollider(blockCollider)
         })
-        this.scene.physics.add.collider(this.scene.player.physicsBody, this.scene.static_blocks)
         this.scene.blocks.forEach((block)=>{
             block.img.setDepth(2)
             if(block.type == 'cloud'){
