@@ -1,12 +1,7 @@
 class LevelButton{
-<<<<<<< HEAD
-    constructor(scene, levelNumber, x,y, isLocked = true){
-
-=======
     constructor(scene, levelNumber, x, y, isLocked = true){
         this.levelNumber = levelNumber
         this.binaryText = this.findBinaryText()
->>>>>>> 57e20a5e9acec82d977414492f9e6ec8535884c7
         this.scene = scene
         this.levelNumber = levelNumber
         this.isLocked = isLocked
