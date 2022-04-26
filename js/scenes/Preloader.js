@@ -72,7 +72,16 @@ class Preloader extends Phaser.Scene{
             frameRate: 12,
             repeat: 0
         })
+        this.anims.create({
+            key:'glow',
+            frames: this.anims.generateFrameNumbers('finish_line',{
+                start: 0,
+                end: 7
+            }),
+            frameRate: 12,
+            repeat: -1
+        })
 
-        this.scene.start('Tutorial2')
+        this.scene.start('Level1')
     }
 }

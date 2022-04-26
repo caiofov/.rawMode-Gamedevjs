@@ -23,7 +23,9 @@ class Level1 extends Phaser.Scene{
                         new Block(this, 400, 100, 'cloud')]
 
         //adds goal
-        this.goal = this.physics.add.staticImage(700,550,'finish_line').setOrigin(0).setDisplaySize(50,50).refreshBody()
+        this.goal = this.add.sprite(700,550,'finish_line').setOrigin(0).setDisplaySize(50,50)
+        this.goal.anims.play('glow')
+        // this.physics.add.staticImage(700,550,'finish_line').setOrigin(0).setDisplaySize(50,50).refreshBody()
         
         //adds features and configs the scene
         this.base = new SceneBase(this)

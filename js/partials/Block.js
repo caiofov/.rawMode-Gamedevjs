@@ -4,9 +4,8 @@ class Block{
         this.type = type
         this.img = this.scene.physics.add.staticImage(x,y,this.type)
         .setOrigin(0)
-        .setDisplaySize(50, 50)
+        .setDisplaySize(50*scale, 50*scale)
         .refreshBody()
-        .setScale(scale)
 
         this.bits = this.createBits(x,y)
     }
