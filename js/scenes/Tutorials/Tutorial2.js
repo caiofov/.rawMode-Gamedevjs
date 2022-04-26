@@ -35,6 +35,12 @@ class Tutorial2 extends Phaser.Scene{
                 }
             })
         
+        this.start_button = this.add.text(game.config.width/2, game.config.height-10, 'Start', 
+        {fontSize: '40px'})
+        .setOrigin(.5)
+        .setInteractive()
+        .setOrigin(.5,1)
+        
     }
 
     update(){

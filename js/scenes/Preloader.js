@@ -43,6 +43,9 @@ class Preloader extends Phaser.Scene{
         //music
         this.load.audio('music1', 'assets/music1.mp3')
         this.load.audio('music2', 'assets/music2.mp3')
+
+        this.load.image('arrows','assets/img/arrows.png')
+        //https://www.flaticon.com/premium-icon/arrows_1782520?term=arrow%20key&page=1&position=10&page=1&position=10&related_id=1782520&origin=tag
     
     }
     create(){
@@ -105,6 +108,6 @@ class Preloader extends Phaser.Scene{
             repeat: -1
         })
 
-        this.scene.start('Level1')
+        this.scene.start('Tutorial3')
     }
 }
