@@ -13,6 +13,8 @@ class Level1 extends Phaser.Scene{
         //player config
         this.player = new Player(this, 105, game.config.height - 100)
 
+        this.static_blocks = []
+
         //list of blocks on the level
         this.blocks = [ ]
         
