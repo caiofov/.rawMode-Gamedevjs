@@ -66,6 +66,7 @@ class Level2 extends Phaser.Scene{
     }
 
     win(){
+        this.cameras.main.fadeOut(300, 255, 255, 255)
         this.base.game_paused = true
         this.base.victory_effect.play()
         this.player.win()
