@@ -13,10 +13,10 @@ class Level3 extends Phaser.Scene{
         
         //player config
         this.player = new Player(this, 100, game.config.height-350)
-        this.static_blocks = this.physics.add.staticImage(0,game.config.height, 'static_level3')
+        this.static_blocks = [this.physics.add.staticImage(0,game.config.height, 'static_level3')
         .setScale(1.56)
         .setOrigin(0,1)
-        .refreshBody()
+        .refreshBody()]
 
 
         //list of blocks on the level
@@ -58,6 +58,7 @@ class Level3 extends Phaser.Scene{
     }
 
     win(){
+        this.cameras.main.fadeOut(300, 255, 255, 255)
         this.base.game_paused = true
         this.base.victory_effect.play()
         this.player.win()

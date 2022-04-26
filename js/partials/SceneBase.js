@@ -33,13 +33,17 @@ class SceneBase{
                 this.scene.background.setVisible(!this.scene.rawModeEnabled)
                 //switch player skin
                 if(this.scene.rawModeEnabled){
-                    this.scene.static_blocks.setVisible(false)
+                    this.scene.static_blocks.forEach((static_block)=>{
+                        static_block.setVisible(false)
+                    })
                     this.scene.anims.pauseAll()
                     this.scene.player.physicsBody.setTexture('player_raw')
                     this.scene.physics.pause()   
                 }
                 else{
-                    this.scene.static_blocks.setVisible(true)
+                    this.scene.static_blocks.forEach((static_block)=>{
+                        static_block.setVisible(true)
+                    })
                     this.scene.anims.resumeAll()
                     // this.scene.player.physicsBody.setTexture('player')
                     this.scene.player.physicsBody.anims.play('walk')
@@ -76,9 +80,9 @@ class SceneBase{
         this.blockColliders.forEach((blockCollider)=>{
             this.scene.physics.world.removeCollider(blockCollider)
         })
-        this.scene.static_blocks.forEach((static_block) =>{
-            this.scene.physics.add.collider(this.scene.player.physicsBody, static_block)
-        })
+        //this.scene.static_blocks.forEach((static_block) =>{
+        //    this.scene.physics.add.collider(this.scene.player.physicsBody, static_block)
+        //})
         this.scene.blocks.forEach((block)=>{
             block.img.setDepth(2)
             if(block.type == 'cloud'){
