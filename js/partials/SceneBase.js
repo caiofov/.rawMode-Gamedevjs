@@ -21,6 +21,7 @@ class SceneBase{
         this.music.play()
 
         this.hit_effect = this.scene.sound.add('hit', {volume:1})
+        this.victory_effect = this.scene.sound.add('victory')
 
         this.scene.input.keyboard.addKey('space')
             .on('down', ()=>{

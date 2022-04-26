@@ -58,6 +58,8 @@ class Level3 extends Phaser.Scene{
     }
 
     win(){
+        this.base.game_paused = true
+        this.base.victory_effect.play()
         this.player.win()
         this.scene.physics.pause()
         //iniciar a nova fase
