@@ -5,12 +5,13 @@ class HelpMenu{
         this.confirm_effect = this.scene.sound.add('confirm', {volume:1})
 
         //help menu background
-        this.help_screen = this.scene.add.image(0,0,'help_menu')
+        this.help_screen = this.scene.add.image(0,0,'gameover_background')
         .setOrigin(0)
         .setScale(1.2)
         .setDepth(10)
 
-        this.help_screen.displayHeight = game.config.height
+        this.help_screen.displayWidth =  200
+        this.help_screen.displayHeight = 0.65*game.config.height
         this.help_screen.x = -1*this.help_screen.displayWidth
 
         //help button
@@ -74,11 +75,12 @@ class HelpMenu{
         let horizontal_margin = 150
         for(let type in blockTypeDictionary){
             let block = this.scene.add.image(x+40, y, type)
+            .setScale(1.2)
             .setOrigin(.5)
             .setDepth(12)
 
             let text = this.scene.add.text(x+ horizontal_margin,y, (blockTypeDictionary[type]).split('').join(' '), 
-                {fontSize: '20px', color: 'black'})
+                {fontSize: '20px', color: 'white'})
             .setOrigin(.5)
             .setWordWrapWidth(50)
             .setDepth(12)
