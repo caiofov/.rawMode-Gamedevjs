@@ -74,7 +74,7 @@ class SceneBase{
         this.blockColliders.forEach((blockCollider)=>{
             this.scene.physics.world.removeCollider(blockCollider)
         })
-
+        this.scene.physics.add.collider(this.scene.player.physicsBody, this.scene.static_blocks)
         this.scene.blocks.forEach((block)=>{
             block.img.setDepth(2)
             if(block.type == 'cloud'){
