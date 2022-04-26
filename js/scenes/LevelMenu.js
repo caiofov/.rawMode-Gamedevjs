@@ -15,20 +15,28 @@ class LevelMenu extends Phaser.Scene{
         .setOrigin(.5)
         .setAlign('center')
         // .setInteractive()
+        
 
-        this.levels = [new LevelButton(this, 1, this.x, this.y, false)]
+        this.levelButtons = [new LevelButton(this, 1, this.x, this.y, false)]
+        
 
         for(let i = 2; i <= numberOfLevels; i++ ){
             this.x += this.margin
-            this.levels.push(new LevelButton(this, i, this.x, this.y))
+            this.levelButtons.push(new LevelButton(this, i, this.x, this.y))
         }
 
     }
 
     update(){
-        this.levels.forEach(level =>{
+        this.levelButtons.forEach(level =>{
             level.update()
         })
+
+        for (let i = 0; i < 9; i++) {
+            if(buttonLevels[i] && this.levelButtons[i].isLocked){
+                this.levelButtons[i].setUnlocked()
+            }
+        }
 
         this.title.on(Phaser.Input.Events.GAMEOBJECT_POINTER_OVER, () =>{
             // this.transformTitleToBinary()

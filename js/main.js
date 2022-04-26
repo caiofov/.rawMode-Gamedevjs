@@ -10,6 +10,8 @@ var nonCollisionBlocks = [
     'cloud',
 ]
 
+var buttonLevels = [true, false, false, false, false]
+
 var numberOfLevels = 5
 
 window.onload = function(){

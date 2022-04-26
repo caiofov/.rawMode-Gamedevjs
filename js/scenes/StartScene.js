@@ -39,6 +39,7 @@ class StartScene extends Phaser.Scene{
             }
         }
 
+
         //eventos para o botão de iniciar
         this.startText.on(Phaser.Input.Events.GAMEOBJECT_POINTER_OVER, () =>{
             this.startText.setScale(1.2);
