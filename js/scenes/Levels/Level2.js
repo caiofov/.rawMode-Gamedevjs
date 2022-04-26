@@ -13,10 +13,14 @@ class Level2 extends Phaser.Scene{
         
         //player config
         this.player = new Player(this, 150, game.config.height-100)
-        this.static_blocks = this.physics.add.staticImage(50,game.config.height-100, 'static_level2')
-        .setScale(1.56)
-        .setOrigin(0,.5)
-        .refreshBody()
+        this.static_blocks = [
+            this.physics.add.staticImage(50,game.config.height-200, 'static_level2_1'),
+            this.physics.add.staticImage(50,game.config.height-100, 'static_level2_2'),
+            this.physics.add.staticImage(14*50,game.config.height-100, 'static_level2_2'),
+        ]
+        
+
+        this.static_blocks.forEach(s=>{s.setScale(1.56).setOrigin(0).refreshBody()})
 
 
         //list of blocks on the level

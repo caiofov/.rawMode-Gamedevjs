@@ -5,8 +5,6 @@ class Preloader extends Phaser.Scene{
     preload(){
         //scene1 background
         this.load.image('background', 'assets/img/background.png')
-        //help menu
-        this.load.image('help_menu', 'assets/img/helpmenu.png')
         this.load.image('gameover_background', 'assets/img/gameover.png')
         //metal block
         this.load.image('metal', 'assets/img/metal.png')
@@ -57,7 +55,8 @@ class Preloader extends Phaser.Scene{
         //https://www.flaticon.com/premium-icon/arrows_1782520?term=arrow%20key&page=1&position=10&page=1&position=10&related_id=1782520&origin=tag
         
         //levels
-        this.load.image('static_level2','assets/img/levels/level2.png')
+        this.load.image('static_level2_1','assets/img/levels/level2_1.png')
+        this.load.image('static_level2_2','assets/img/levels/level2_2.png')
         this.load.image('static_level3','assets/img/levels/level3.png')
     }
     create(){
@@ -120,7 +119,7 @@ class Preloader extends Phaser.Scene{
             repeat: -1
         })
 
-        this.scene.start('StartScene')
+        this.scene.start('Level2')
     }
 
 }
