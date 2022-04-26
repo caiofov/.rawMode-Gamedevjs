@@ -43,7 +43,7 @@ class Level4 extends Phaser.Scene{
         this.goal = this.add.sprite(550,200,'finish_line')
         .setOrigin(0).setDisplaySize(50,50)
         this.goal.anims.play('glow')
-        this.physics.add.staticImage(550,200,'finish_line').setOrigin(0).setDisplaySize(50,50).refreshBody()
+        this.phygoal = this.physics.add.staticImage(550,200,'finish_line').setOrigin(0).setDisplaySize(50,50).refreshBody()
         
         //adds features and configs the scene
         this.base = new SceneBase(this)
@@ -68,7 +68,10 @@ class Level4 extends Phaser.Scene{
         this.base.victory_effect.play()
         this.player.win()
         buttonLevels[4] = true
-        this.scene.physics.pause()
+        this.physics.pause()
+        this.time.delayedCall(500, () => {
+			this.scene.start('Level5', { fadeIn: true })
+		})
         //iniciar a nova fase
     }
 
