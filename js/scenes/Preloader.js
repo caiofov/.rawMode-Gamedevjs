@@ -58,7 +58,8 @@ class Preloader extends Phaser.Scene{
         //levels
         this.load.image('static_level2_1','assets/img/levels/level2_1.png')
         this.load.image('static_level2_2','assets/img/levels/level2_2.png')
-        this.load.image('static_level3','assets/img/levels/level3.png')
+        this.load.image('static_level3_1','assets/img/levels/level3_1.png')
+        this.load.image('static_level3_2','assets/img/levels/level3_2.png')
     }
     create(){
         //player walking animation
@@ -120,7 +121,7 @@ class Preloader extends Phaser.Scene{
             repeat: -1
         })
 
-        this.scene.start('Level2')
+        this.scene.start('Level3')
     }
 
 }
