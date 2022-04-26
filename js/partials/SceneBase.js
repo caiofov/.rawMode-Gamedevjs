@@ -10,6 +10,13 @@ class SceneBase{
         this.blockColliders = []
         this.add_collisions()
 
+        //music
+        this.music = this.scene.sound.add('music1', {volume: 0.15})
+        this.music_raw = this.scene.sound.add('music2', {volume: 0.15})
+        this.music.play()
+        this.music_raw.play()
+        this.music_raw.setMute(true)
+
         this.scene.input.keyboard.addKey('space')
             .on('down', ()=>{
                 this.scene.rawModeEnabled = !this.scene.rawModeEnabled
@@ -17,10 +24,15 @@ class SceneBase{
                 this.scene.background.setVisible(!this.scene.rawModeEnabled)
                 //switch player skin
                 if(this.scene.rawModeEnabled){
+                    this.music.setMute(true)
+                    this.music_raw.setMute(false)
                     this.scene.player.physicsBody.setTexture('player_raw')
                     this.scene.physics.pause()   
                 }
                 else{
+                    this.music_raw.setMute(false)
+                    this.music.setMute(true)
+                    // this.scene.player.physicsBody.setTexture('player')
                     this.scene.player.physicsBody.anims.play('walk')
                     this.add_collisions()
                     this.scene.physics.resume()
