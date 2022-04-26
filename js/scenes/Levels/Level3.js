@@ -37,6 +37,7 @@ class Level3 extends Phaser.Scene{
                         new Block(this, 500, 550, 'spike'),
                         new Block(this, 550, 550, 'spike'),
                         new Block(this, 600, 550, 'spike'),
+                        new Block(this, 550, 100, 'spike')
                     ]
 
         //adds goal
@@ -68,6 +69,9 @@ class Level3 extends Phaser.Scene{
         this.base.victory_effect.play()
         this.player.win()
         this.physics.pause()
+        this.time.delayedCall(500, () => {
+			this.scene.start('Level4', { fadeIn: true })
+		})
         //iniciar a nova fase
     }
 
