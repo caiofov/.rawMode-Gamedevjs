@@ -75,7 +75,6 @@ class HelpMenu{
                 {fontSize: '20px', color: 'black'})
             .setOrigin(.5)
             .setWordWrapWidth(50)
-            .setDepth(0)
 
             this.blocks_images.push(block)
             this.blocks_binary.push(text)

@@ -7,7 +7,11 @@ class StartScene extends Phaser.Scene{
         this.background.displayHeight = game.config.height
         this.background.anims.play('binary_background')
 
-        this.startText = this.add.text(game.config.width/2, game.config.height/2, 'START', {fontSize: '32px'})
+        this.startText = this.add.text(game.config.width/2, game.config.height/2, 'START', {fontSize: '34px'})
+        .setOrigin(.5)
+        .setInteractive()
+        .setVisible(false)
+        this.tutorial_text = this.add.text(game.config.width/2, game.config.height/2+40, 'TUTORIAL', {fontSize: '24px'})
         .setOrigin(.5)
         .setInteractive()
         .setVisible(false)
@@ -25,6 +29,7 @@ class StartScene extends Phaser.Scene{
     update(){
         if(!this.background.anims.isPlaying){
             this.startText.setVisible(true)
+            this.tutorial_text.setVisible(true)
             this.title.setVisible(true)
         
             if(this.count < this.title_characters.length *2){
@@ -32,15 +37,27 @@ class StartScene extends Phaser.Scene{
             }
         }
 
+        //eventos para o botão de iniciar
         this.startText.on(Phaser.Input.Events.GAMEOBJECT_POINTER_OVER, () =>{
             this.startText.setScale(1.2);
         })
-
         this.startText.on(Phaser.Input.Events.GAMEOBJECT_POINTER_OUT, () =>{
             this.startText.setScale(1.0);
         })
         this.startText.on(Phaser.Input.Events.GAMEOBJECT_POINTER_DOWN, () =>{
             this.scene.start('LevelMenu')
+        })
+
+        //eventos para o botão do tutorial
+        this.tutorial_text.on(Phaser.Input.Events.GAMEOBJECT_POINTER_OVER, () =>{
+            this.tutorial_text.setScale(1.2);
+        })
+
+        this.tutorial_text.on(Phaser.Input.Events.GAMEOBJECT_POINTER_OUT, () =>{
+            this.tutorial_text.setScale(1.0);
+        })
+        this.tutorial_text.on(Phaser.Input.Events.GAMEOBJECT_POINTER_DOWN, () =>{
+            this.scene.start('Tutorial1')
         })
         
     }

@@ -1,11 +1,12 @@
 class Block{
-    constructor(scene, x, y, type){
+    constructor(scene, x, y, type, scale = 1){
         this.scene = scene
         this.type = type
         this.img = this.scene.physics.add.staticImage(x,y,this.type)
         .setOrigin(0)
         .setDisplaySize(50, 50)
         .refreshBody()
+        .setScale(scale)
 
         this.bits = this.createBits(x,y)
     }

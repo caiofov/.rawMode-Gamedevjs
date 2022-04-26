@@ -3,7 +3,9 @@ class Bit{
         this.scene = scene
         this.block = block //class Block
         this.bitValue = bit //'1' or '0' -> string
-        this.bitText = this.scene.add.image(x,y,'bit'+this.bitValue).setDisplaySize(25,25).setInteractive()
+        this.bitText = this.scene.add.image(x,y,'bit'+this.bitValue)
+        .setDisplaySize(25,25)
+        .setInteractive()
         //this.bitText = this.scene.add.text(x,y, bit, {fontSize: '15px'})
         //.setOrigin(.5)
         //.setInteractive()

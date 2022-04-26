@@ -19,8 +19,7 @@ class Level1 extends Phaser.Scene{
                         new Block(this, 100, 550, 'metal'),
                         new Block(this, 150, 550, 'spike'),
                         new Block(this, 100, 100, 'metal'), 
-                        new Block(this,200, 100, 'spike'), 
-                        new Block(this, 300, 100, 'water'), 
+                        new Block(this,200, 100, 'spike'),  
                         new Block(this, 400, 100, 'cloud')]
 
         //adds goal

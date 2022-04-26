@@ -73,6 +73,6 @@ class Preloader extends Phaser.Scene{
             repeat: 0
         })
 
-        this.scene.start('Level1')
+        this.scene.start('Tutorial2')
     }
 }
