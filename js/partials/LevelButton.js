@@ -1,27 +1,29 @@
 class LevelButton{
-    constructor(levelNumber){
-        this.levelNumber = levelNumber
-        this.binaryText = this.findBinaryText()
-    }
-    initialize(scene, levelNumber, x, y, isLocked = true){
+    constructor(scene, levelNumber, x,y, isLocked = true){
+
         this.scene = scene
-        this.confirm_effect = this.scene.sound.add('confirm', {volume:1})
-        
+        this.levelNumber = levelNumber
         this.isLocked = isLocked
-        
+
+        this.confirm_effect = this.scene.sound.add('confirm', {volume:1})
+
         this.button = this.scene.add.text(x,y, levelNumber, 
             {fontSize: '32px', color: 'gray'})
         .setOrigin(.5)
         .setInteractive()
         // .setAlign('center')
 
+        this.binaryText = this.findBinaryText()
+        
+        
         if(!isLocked){
             this.setUnlocked()
         }
     }
+
     setUnlocked(){
         this.isLocked = false
-        // this.button.setColor('white')
+        this.button.setColor('white')
     }
 
     update(){
@@ -36,9 +38,6 @@ class LevelButton{
             this.confirm_effect.play()
             if(!this.isLocked){
                 this.scene.scene.start('Level' + this.levelNumber)
-            }
-            else{
-                console.log("level locked")
             }
         })
     }

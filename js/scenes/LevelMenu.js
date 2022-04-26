@@ -16,18 +16,17 @@ class LevelMenu extends Phaser.Scene{
         .setAlign('center')
         // .setInteractive()
 
-        levelButtons[0].initialize(this, 1, this.x, this.y, false)
-        
+        this.levels = [new LevelButton(this, 1, this.x, this.y, false)]
 
         for(let i = 2; i <= numberOfLevels; i++ ){
             this.x += this.margin
-            levelButtons[i-1].initialize(this, i, this.x, this.y)
+            this.levels.push(new LevelButton(this, i, this.x, this.y))
         }
 
     }
 
     update(){
-        levelButtons.forEach(level =>{
+        this.levels.forEach(level =>{
             level.update()
         })
 
