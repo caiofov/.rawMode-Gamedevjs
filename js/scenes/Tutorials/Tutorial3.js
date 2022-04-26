@@ -9,6 +9,8 @@ class Tutorial3 extends Phaser.Scene{
         .setOrigin(0,1)
         .setInteractive()
 
+        this.confirm_effect = this.scene.sound.add('confirm', {volume:1})
+
 
         this.text1 = this.add.text(game.config.width/2, 300, 
             "Normal blocks", 
@@ -85,6 +87,7 @@ class Tutorial3 extends Phaser.Scene{
         })
         this.arrow_left.on(Phaser.Input.Events.GAMEOBJECT_POINTER_DOWN, () =>{
             this.scene.start('Tutorial2')
+            this.confirm_effect.play()
         })
 
         this.start_button.on(Phaser.Input.Events.GAMEOBJECT_POINTER_OVER, () =>{
@@ -95,6 +98,7 @@ class Tutorial3 extends Phaser.Scene{
         })
         this.start_button.on(Phaser.Input.Events.GAMEOBJECT_POINTER_DOWN, () =>{
             this.scene.start('LevelMenu')
+            this.confirm_effect.play()
         })
     }
 

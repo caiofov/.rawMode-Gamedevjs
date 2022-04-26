@@ -1,8 +1,11 @@
 class LevelButton{
     constructor(scene, levelNumber, x,y, isLocked = true){
+
         this.scene = scene
         this.levelNumber = levelNumber
         this.isLocked = isLocked
+
+        this.confirm_effect = this.scene.sound.add('confirm', {volume:1})
 
         this.button = this.scene.add.text(x,y, levelNumber, 
             {fontSize: '32px', color: 'gray'})
@@ -32,6 +35,7 @@ class LevelButton{
            this.transformToDecimal()
         })
         this.button.on(Phaser.Input.Events.GAMEOBJECT_POINTER_DOWN, () =>{
+            this.confirm_effect.play()
             if(!this.isLocked){
                 this.scene.scene.start('Level' + this.levelNumber)
             }

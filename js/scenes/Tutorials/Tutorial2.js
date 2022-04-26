@@ -14,6 +14,8 @@ class Tutorial2 extends Phaser.Scene{
         .setOrigin(1)
         .setInteractive()
 
+        this.confirm_effect = this.scene.sound.add('confirm', {volume:1})
+
         this.text = this.add.text(game.config.width/2, 30, 
         "You can change the bit sequence by swaping two bits \n\nPress [SPACE] to enter the raw mode and click on the bit", 
         {fontSize: '24px'})
@@ -77,6 +79,7 @@ class Tutorial2 extends Phaser.Scene{
         })
         this.arrow_left.on(Phaser.Input.Events.GAMEOBJECT_POINTER_DOWN, () =>{
             this.scene.start('Tutorial1')
+            this.confirm_effect.play()
         })
 
         this.arrow_right.on(Phaser.Input.Events.GAMEOBJECT_POINTER_OVER, () =>{
@@ -87,6 +90,7 @@ class Tutorial2 extends Phaser.Scene{
         })
         this.arrow_right.on(Phaser.Input.Events.GAMEOBJECT_POINTER_DOWN, () =>{
             this.scene.start('Tutorial3')
+            this.confirm_effect.play()
         })
     }
 }

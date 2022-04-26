@@ -8,6 +8,8 @@ class LevelMenu extends Phaser.Scene{
         this.x = 250
         this.y = game.config.height / 2
 
+        this.confirm_effect = this.sound.add('confirm', {volume:1})
+
 
         this.title = this.add.text(game.config.width/2, this.margin, ".raw mode", {fontSize: '32px'})
         .setOrigin(.5)

@@ -2,6 +2,8 @@ class HelpMenu{
     constructor(scene){
         this.scene = scene
 
+        this.confirm_effect = this.scene.sound.add('confirm', {volume:1})
+
         //help menu background
         this.help_screen = this.scene.add.image(0,0,'help_menu')
         .setOrigin(0)
@@ -43,6 +45,7 @@ class HelpMenu{
         })
         this.help_button.on(Phaser.Input.Events.GAMEOBJECT_POINTER_DOWN, () =>{
             this.isMenuOpen = !this.isMenuOpen
+            this.confirm_effect.play()
         })
 
         if(this.isMenuOpen && this.help_screen.x < -5){

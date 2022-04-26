@@ -11,6 +11,8 @@ class Tutorial1 extends Phaser.Scene{
         .setWordWrapWidth(game.config.width - 50)
         .setAlign('center')
 
+        this.confirm_effect = this.scene.sound.add('confirm', {volume:1})
+
         this.arrow = this.add.text(game.config.width-5, game.config.height, 'ᐅ', 
         {fontSize: '40px'})
         .setOrigin(1)
@@ -38,6 +40,7 @@ class Tutorial1 extends Phaser.Scene{
         })
         this.arrow.on(Phaser.Input.Events.GAMEOBJECT_POINTER_DOWN, () =>{
             this.scene.start('Tutorial2')
+            this.confirm_effect.play()
         })
 
         this.start_button.on(Phaser.Input.Events.GAMEOBJECT_POINTER_OVER, () =>{
@@ -48,6 +51,7 @@ class Tutorial1 extends Phaser.Scene{
         })
         this.start_button.on(Phaser.Input.Events.GAMEOBJECT_POINTER_DOWN, () =>{
             this.scene.start('LevelMenu')
+            this.confirm_effect.play()
         })
     }
     

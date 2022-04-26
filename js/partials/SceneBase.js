@@ -6,18 +6,17 @@ class SceneBase{
         this.scene.background.displayHeight = game.config.height
 
         //add collisions
-        this.scene.physics.add.overlap(this.scene.player.physicsBody, this.scene.goal, this.scene.win, null, this.scene)
+        this.scene.physics.add.overlap(this.scene.player.physicsBody, this.scene.phygoal, this.scene.win, null, this.scene)
         this.blockColliders = []
         this.add_collisions()
 
         this.game_paused = false
 
         //music
-        this.music = this.scene.sound.add('music1', {volume: 0.15})
-        this.music_raw = this.scene.sound.add('music2', {volume: 0.15})
+        this.music = this.scene.sound.add('music1', {volume: 0.005})
         this.music.play()
-        this.music_raw.play()
-        this.music_raw.setMute(true)
+
+        this.hit_effect = this.scene.sound.add('hit', {volume:1})
 
         this.scene.input.keyboard.addKey('space')
             .on('down', ()=>{
@@ -30,15 +29,11 @@ class SceneBase{
                 //switch player skin
                 if(this.scene.rawModeEnabled){
                     this.scene.anims.pauseAll()
-                    this.music.setMute(true)
-                    this.music_raw.setMute(false)
                     this.scene.player.physicsBody.setTexture('player_raw')
                     this.scene.physics.pause()   
                 }
                 else{
                     this.scene.anims.resumeAll()
-                    this.music_raw.setMute(false)
-                    this.music.setMute(true)
                     // this.scene.player.physicsBody.setTexture('player')
                     this.scene.player.physicsBody.anims.play('walk')
                     this.add_collisions()
@@ -97,6 +92,8 @@ class SceneBase{
     }
 
     game_over(){
+        this.scene.sound.stopAll()
+        this.hit_effect.play()
         this.game_paused = true
         this.scene.physics.pause() //congela os eventos físicos
         this.scene.player.kill()

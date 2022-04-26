@@ -7,12 +7,15 @@ class RestartButton{
         .setInteractive()
         .setDisplaySize(this.size,this.size)
         this.texture_israw = false
+
+        this.confirm_effect = this.scene.sound.add('confirm')
         
     }
 
     update(){
         this.button.on(Phaser.Input.Events.GAMEOBJECT_POINTER_DOWN, () =>{
             this.scene.scene.restart()
+            this.confirm_effect.play()
         })
         this.button.on(Phaser.Input.Events.GAMEOBJECT_POINTER_OVER, () =>{
             this.button.setDisplaySize(this.size*1.5,this.size*1.5)
