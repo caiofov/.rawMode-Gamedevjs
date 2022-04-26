@@ -6,6 +6,7 @@ class RestartButton{
         .setOrigin(originx,originy)
         .setInteractive()
         .setDisplaySize(this.size,this.size)
+        .setDepth(11)
         this.texture_israw = false
 
         this.confirm_effect = this.scene.sound.add('confirm')

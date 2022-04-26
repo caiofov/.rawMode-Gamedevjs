@@ -16,8 +16,8 @@ class Level3 extends Phaser.Scene{
         this.static_blocks = [
             this.physics.add.staticImage(0,game.config.height-250, 'static_level3_1'),
             this.physics.add.staticImage(100,game.config.height-200, 'static_level3_2'),
-            this.physics.add.staticImage(11*50,game.config.height-500, 'static_level3_1'),
-            this.physics.add.staticImage(13*50,game.config.height-450, 'static_level3_2'),
+            this.physics.add.staticImage(11*50,game.config.height-450, 'static_level3_1'),
+            this.physics.add.staticImage(13*50,game.config.height-400, 'static_level3_2'),
         ]
         
 
@@ -40,10 +40,10 @@ class Level3 extends Phaser.Scene{
                     ]
 
         //adds goal
-        this.goal = this.add.sprite(650,50,'finish_line')
+        this.goal = this.add.sprite(650,100,'finish_line')
         .setOrigin(0).setDisplaySize(50,50)
         this.goal.anims.play('glow')
-        this.physics.add.staticImage(650,50,'finish_line').setOrigin(0).setDisplaySize(50,50).refreshBody()
+        this.physics.add.staticImage(650,100,'finish_line').setOrigin(0).setDisplaySize(50,50).refreshBody()
         
         //adds features and configs the scene
         this.base = new SceneBase(this)
