@@ -9,7 +9,7 @@ var blockTypeDictionary =
 var nonCollisionBlocks = [
     'cloud',
 ]
-var levelButtons = []
+
 var numberOfLevels = 5
 
 window.onload = function(){

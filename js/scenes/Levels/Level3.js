@@ -68,7 +68,7 @@ class Level3 extends Phaser.Scene{
         this.base.game_paused = true
         this.base.victory_effect.play()
         this.player.win()
-        levelsButtons[3].setUnlocked()
+        levelButtons[3].setUnlocked()
         this.physics.pause()
         this.time.delayedCall(500, () => {
 			this.scene.start('Level4', { fadeIn: true })

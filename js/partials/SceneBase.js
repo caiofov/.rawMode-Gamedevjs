@@ -55,10 +55,7 @@ class SceneBase{
                         this.scene.selectedBit.bitText.setTexture('bit' + this.scene.selectedBit.bitValue)
                         this.scene.selectedBit = null
                     }
-                }
-                console.log(this.scene.rawModeEnabled)
-
-                
+                }   
             })
         
         this.help_menu = new HelpMenu(this.scene)

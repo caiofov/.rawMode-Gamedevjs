@@ -58,7 +58,7 @@ class Level1 extends Phaser.Scene{
         this.base.victory_effect.play()
         this.player.win()
         this.physics.pause()
-        levelsButtons[1].setUnlocked()
+
         //this.scene.start('Level2')
         this.time.delayedCall(500, () => {
 			this.scene.start('Level2', { fadeIn: true })
