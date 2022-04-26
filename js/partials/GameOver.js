@@ -11,7 +11,7 @@ class GameOver{
         .setDisplaySize(game.config.width/2,game.config.height/2)
 
         //botao de reiniciar
-        this.restart = new RestartButton(this.scene, 500, 380, 40, 0.5, 0.5)
+        this.restart = new RestartButton(this.scene, 500, 380, 40, 0.5, 0.5, 'black')
         //titulo da janela
         this.text = this.scene.add.text(game.config.width/2,game.config.height/2 - 100,"Game Over",{fontSize: '40px', color: 'black'})
         .setOrigin(.5)

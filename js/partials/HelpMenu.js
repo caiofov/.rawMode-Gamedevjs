@@ -33,12 +33,12 @@ class HelpMenu{
     update(){
         this.help_button.on(Phaser.Input.Events.GAMEOBJECT_POINTER_OVER, () =>{
             if(!this.isMenuOpen){
-                this.help_button.setScale(1.5);
+                this.help_button.setScale(2.5);
             }
         })
         this.help_button.on(Phaser.Input.Events.GAMEOBJECT_POINTER_OUT, () =>{
             if(!this.isMenuOpen){
-                this.help_button.setScale(1.2);
+                this.help_button.setScale(2.2);
             }
         })
         this.help_button.on(Phaser.Input.Events.GAMEOBJECT_POINTER_DOWN, () =>{
