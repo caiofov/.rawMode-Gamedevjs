@@ -74,6 +74,9 @@ class SceneBase{
             this.help_menu.update()
             this.restartButton.update()
         }
+        if(this.scene.player.physicsBody.y >=575){
+            this.game_over()
+        }
     }
 
     add_collisions(){
@@ -106,7 +109,8 @@ class SceneBase{
 
     game_over(){
         this.scene.sound.stopAll()
-        this.hit_effect.play()
+        if(this.scene.player.physicsBody.y <575)
+            this.hit_effect.play()
         this.game_paused = true
         this.scene.physics.pause() //congela os eventos físicos
         this.scene.player.kill()
