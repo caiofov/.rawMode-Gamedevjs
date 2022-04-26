@@ -70,6 +70,7 @@ class Level2 extends Phaser.Scene{
         this.base.game_paused = true
         this.base.victory_effect.play()
         this.player.win()
+        levelsButtons[2].setUnlocked()
         this.physics.pause()
         this.time.delayedCall(500, () => {
 			this.scene.start('Level3', { fadeIn: true })
