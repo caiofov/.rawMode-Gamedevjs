@@ -10,6 +10,8 @@ class SceneBase{
         this.blockColliders = []
         this.add_collisions()
 
+        this.game_paused = false
+
         //music
         this.music = this.scene.sound.add('music1', {volume: 0.15})
         this.music_raw = this.scene.sound.add('music2', {volume: 0.15})
@@ -19,17 +21,22 @@ class SceneBase{
 
         this.scene.input.keyboard.addKey('space')
             .on('down', ()=>{
+                if(this.game_paused){
+                    return
+                }
                 this.scene.rawModeEnabled = !this.scene.rawModeEnabled
                 //switch background
                 this.scene.background.setVisible(!this.scene.rawModeEnabled)
                 //switch player skin
                 if(this.scene.rawModeEnabled){
+                    this.scene.anims.pauseAll()
                     this.music.setMute(true)
                     this.music_raw.setMute(false)
                     this.scene.player.physicsBody.setTexture('player_raw')
                     this.scene.physics.pause()   
                 }
                 else{
+                    this.scene.anims.resumeAll()
                     this.music_raw.setMute(false)
                     this.music.setMute(true)
                     // this.scene.player.physicsBody.setTexture('player')
@@ -86,13 +93,11 @@ class SceneBase{
 
     //spike collision function
     spike_collision(_player, _spike){
-        //checks if lower part of the player is touching the upper part of the spike
-        if(_player.body.touching.down && _spike.body.touching.up){
-            this.base.game_over()
-        }
+        this.base.game_over()
     }
 
     game_over(){
+        this.game_paused = true
         this.scene.physics.pause() //congela os eventos físicos
         this.scene.player.kill()
         this.help_menu.help_button.anims.stop()
