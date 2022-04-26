@@ -51,6 +51,7 @@ class Preloader extends Phaser.Scene{
         this.load.audio('hit', 'assets/hit.mp3')
         this.load.audio('confirm', 'assets/confirm.mp3')
         this.load.audio('victory', 'assets/victory.mp3')
+        this.load.audio('rawmode', 'assets/rawmode.mp3')
 
         this.load.image('arrows','assets/img/arrows.png')
         //https://www.flaticon.com/premium-icon/arrows_1782520?term=arrow%20key&page=1&position=10&page=1&position=10&related_id=1782520&origin=tag

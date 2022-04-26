@@ -71,6 +71,9 @@ class Level2 extends Phaser.Scene{
         this.base.victory_effect.play()
         this.player.win()
         this.physics.pause()
+        this.time.delayedCall(500, () => {
+			this.scene.start('Level3', { fadeIn: true })
+		})
         //iniciar a nova fase
     }
 
