@@ -86,14 +86,14 @@ class Tutorial1 extends Phaser.Scene{
         x-=horizontal_margin
         
         this.texts_about.push(
-            this.add.text(x,y, "Walk-through block", {fontSize: '25px'})
+            this.add.text(x,y, "Solid", {fontSize: '25px'})
                 .setWordWrapWidth(100)
                 .setOrigin(.5,0)
                 .setAlign('center'))
         x-=horizontal_margin
         
         this.texts_about.push(
-            this.add.text(x,y, "Solid", {fontSize: '25px'})
+            this.add.text(x,y, "Walk-through block", {fontSize: '25px'})
                 .setOrigin(.5,0))
     }
 }
