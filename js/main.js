@@ -17,7 +17,7 @@ window.onload = function(){
         type: Phaser.Canvas, 
         width: 800,
         height: 600,
-        scene: [Preloader, StartScene, LevelMenu, Level1, Level2, Tutorial1, Tutorial2, Tutorial3], 
+        scene: [Preloader, StartScene, LevelMenu, Level1, Level2,Level3, Tutorial1, Tutorial2, Tutorial3], 
         physics: {
             default: 'arcade', 
             arcade: {
