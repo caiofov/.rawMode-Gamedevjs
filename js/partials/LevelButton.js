@@ -1,9 +1,7 @@
 class LevelButton{
-    constructor(levelNumber){
+    constructor(scene, levelNumber, x, y, isLocked = true){
         this.levelNumber = levelNumber
         this.binaryText = this.findBinaryText()
-    }
-    initialize(scene, levelNumber, x, y, isLocked = true){
         this.scene = scene
         this.confirm_effect = this.scene.sound.add('confirm', {volume:1})
         
@@ -21,7 +19,7 @@ class LevelButton{
     }
     setUnlocked(){
         this.isLocked = false
-        // this.button.setColor('white')
+        this.button.setColor('white')
     }
 
     update(){

@@ -67,7 +67,7 @@ class Level4 extends Phaser.Scene{
         this.base.game_paused = true
         this.base.victory_effect.play()
         this.player.win()
-        levelButtons[4].setUnlocked()
+        buttonLevels[4] = true
         this.scene.physics.pause()
         //iniciar a nova fase
     }
