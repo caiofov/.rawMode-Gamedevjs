@@ -25,7 +25,8 @@ class Level1 extends Phaser.Scene{
                         new Block(this, 150, 550, 'spike'),
                         new Block(this, 100, 100, 'metal'), 
                         new Block(this,200, 100, 'spike'),  
-                        new Block(this, 400, 100, 'cloud')]
+                        new Block(this, 400, 100, 'cloud'),
+                        new Block(this, 500, 550, 'spike')]
 
         //adds goal
         this.goal = this.add.sprite(700,550,'finish_line').setOrigin(0).setDisplaySize(50,50)
@@ -55,6 +56,10 @@ class Level1 extends Phaser.Scene{
         this.base.victory_effect.play()
         this.player.win()
         this.physics.pause()
+        //this.scene.start('Level2')
+        this.time.delayedCall(500, () => {
+			this.scene.start('Level2', { fadeIn: true })
+		})
         //iniciar a nova fase
     }
 

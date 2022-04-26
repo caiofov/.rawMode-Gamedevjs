@@ -22,9 +22,11 @@ class SceneBase{
 
         this.hit_effect = this.scene.sound.add('hit', {volume:1})
         this.victory_effect = this.scene.sound.add('victory')
+        this.raw_mode_effect = this.scene.sound.add('rawmode')
 
         this.scene.input.keyboard.addKey('space')
             .on('down', ()=>{
+                this.raw_mode_effect.play()
                 if(this.game_paused){
                     return
                 }
