@@ -38,6 +38,10 @@ class Preloader extends Phaser.Scene{
         this.load.spritesheet('player_raw', 'assets/img/player_raw.png', {frameWidth:32, frameHeight:32})
         //finish line
         this.load.spritesheet('finish_line', 'assets/img/finishline.png', {frameWidth:32, frameHeight:32})
+
+        //music
+        this.load.audio('music1', 'assets/music1.mp3')
+        this.load.audio('music2', 'assets/music2.mp3')
     
     }
     create(){
