@@ -1,8 +1,8 @@
 class RestartButton{
-    constructor(scene, x, y, size, originx = 1, originy = 0){
+    constructor(scene, x, y, size, originx = 1, originy = 0, color = 'white'){
         this.scene = scene
         this.size = size
-        this.button = this.scene.add.image(x,y,'restart')
+        this.button = this.scene.add.image(x,y,'restart_'+color)
         .setOrigin(originx,originy)
         .setInteractive()
         .setDisplaySize(this.size,this.size)

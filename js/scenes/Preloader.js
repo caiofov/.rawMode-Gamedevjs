@@ -22,9 +22,8 @@ class Preloader extends Phaser.Scene{
         this.load.image('gray1', 'assets/img/gray1.png')
 
         //restart button
-        this.load.image('restart', 'assets/img/restart.png')
-        // https://www.onlinewebfonts.com/icon/510461
-        this.load.image('restart_raw', 'assets/img/restart_raw.png')
+        this.load.image('restart_white', 'assets/img/restart_white.png')
+        this.load.image('restart_black', 'assets/img/restart_black.png')
 
         //help button (question mark)
         this.load.spritesheet('question', 'assets/img/question.png', {frameWidth:16, frameHeight:16})
@@ -44,6 +43,9 @@ class Preloader extends Phaser.Scene{
         //music
         this.load.audio('music1', 'assets/music1.mp3')
         this.load.audio('music2', 'assets/music2.mp3')
+
+        this.load.image('arrows','assets/img/arrows.png')
+        //https://www.flaticon.com/premium-icon/arrows_1782520?term=arrow%20key&page=1&position=10&page=1&position=10&related_id=1782520&origin=tag
     
     }
     create(){
@@ -106,7 +108,7 @@ class Preloader extends Phaser.Scene{
             repeat: -1
         })
 
-        this.scene.start('Level1')
+        this.scene.start('Tutorial3')
     }
 
 }

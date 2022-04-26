@@ -21,6 +21,12 @@ class Tutorial1 extends Phaser.Scene{
         this.texts_about = []
         this.load_content()
 
+        this.start_button = this.add.text(game.config.width/2, game.config.height-10, 'Start', 
+            {fontSize: '40px'})
+            .setOrigin(.5)
+            .setInteractive()
+            .setOrigin(.5,1)
+
     }
 
     update(){
@@ -32,6 +38,16 @@ class Tutorial1 extends Phaser.Scene{
         })
         this.arrow.on(Phaser.Input.Events.GAMEOBJECT_POINTER_DOWN, () =>{
             this.scene.start('Tutorial2')
+        })
+
+        this.start_button.on(Phaser.Input.Events.GAMEOBJECT_POINTER_OVER, () =>{
+            this.start_button.setScale(1.2);
+        })
+        this.start_button.on(Phaser.Input.Events.GAMEOBJECT_POINTER_OUT, () =>{
+            this.start_button.setScale(1.0);
+        })
+        this.start_button.on(Phaser.Input.Events.GAMEOBJECT_POINTER_DOWN, () =>{
+            this.scene.start('LevelMenu')
         })
     }
     
