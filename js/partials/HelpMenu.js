@@ -14,6 +14,7 @@ class HelpMenu{
         //help button
         this.help_button = this.scene.add.sprite(0, 0, 'question')
         .setOrigin(0)
+        .setScale(2)
         .setInteractive()
         
         //load information

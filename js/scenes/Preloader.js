@@ -33,9 +33,11 @@ class Preloader extends Phaser.Scene{
         // https://www.videvo.net/video/binary-numbers-01-alpha-matte/1343/ -> video
         
         //player spritesheet
-        this.load.spritesheet('player', 'assets/img/player.png', {frameWidth:32, frameHeight:32})
+        this.load.spritesheet('player', 'assets/img/player_spritesheet.png', {frameWidth:32, frameHeight:37})
         //raw player spritesheet
-        this.load.spritesheet('player_raw', 'assets/img/player_raw.png', {frameWidth:32, frameHeight:32})
+        this.load.spritesheet('player_raw', 'assets/img/player_raw.png', {frameWidth:32, frameHeight:37})
+        //player jump
+        this.load.spritesheet('player_jump', 'assets/img/player_jump.png', {frameWidth:32, frameHeight:37})
         //finish line
         this.load.spritesheet('finish_line', 'assets/img/finishline.png', {frameWidth:32, frameHeight:32})
     
@@ -45,10 +47,28 @@ class Preloader extends Phaser.Scene{
         this.anims.create({
             key:'walk',
             frames: this.anims.generateFrameNumbers('player', {
-                start: 0,
-                end: 0
+                start: 18,
+                end: 23
             }),
             frameRate: 8,
+            repeat: -1 
+        })
+        this.anims.create({
+            key:'like',
+            frames: this.anims.generateFrameNumbers('player', {
+                start: 6,
+                end: 6
+            }),
+            frameRate: 1,
+            repeat: -1 
+        })
+        this.anims.create({
+            key:'stop',
+            frames: this.anims.generateFrameNumbers('player', {
+                start: 12,
+                end: 15
+            }),
+            frameRate: 4,
             repeat: -1 
         })
         //help button
@@ -78,7 +98,7 @@ class Preloader extends Phaser.Scene{
                 start: 0,
                 end: 7
             }),
-            frameRate: 12,
+            frameRate: 16,
             repeat: -1
         })
 

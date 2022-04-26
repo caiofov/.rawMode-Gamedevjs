@@ -34,7 +34,10 @@ class Level1 extends Phaser.Scene{
 
     update(){
         this.base.update()
-        this.player.update()
+        if(!this.rawModeEnabled){
+            this.player.update()
+        }
+        
 
         this.blocks.forEach(block =>{
             block.update()
@@ -42,6 +45,7 @@ class Level1 extends Phaser.Scene{
     }
 
     win(){
+        this.player.win()
         this.scene.physics.pause()
         //iniciar a nova fase
     }

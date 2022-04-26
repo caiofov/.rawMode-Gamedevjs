@@ -21,7 +21,7 @@ class SceneBase{
                     this.scene.physics.pause()   
                 }
                 else{
-                    this.scene.player.physicsBody.setTexture('player')
+                    this.scene.player.physicsBody.anims.play('walk')
                     this.add_collisions()
                     this.scene.physics.resume()
                     if(this.scene.selectedBit){
@@ -29,6 +29,7 @@ class SceneBase{
                         this.scene.selectedBit = null
                     }
                 }
+                console.log(this.scene.rawModeEnabled)
 
                 
             })
@@ -83,6 +84,7 @@ class SceneBase{
         this.scene.physics.pause() //congela os eventos físicos
         this.scene.player.kill()
         this.help_menu.help_button.anims.stop()
+        this.scene.goal.anims.stop()
         this.gameOver = new GameOver(this.scene)
     }
 }
